@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Projects</title>
-  <meta name="description" content="This is my blog and portfolio">
+  <title>Testing the preamp</title>
+  <meta name="description" content="Before I ordered the circuit boards I wanted to test the preamp circuit. So I hooked it up on a breadboard and because I don’t have a oscilloscope I used my ...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/projects/">
+  <link rel="canonical" href="http://localhost:4000/drumsense/2017/02/15/preamp-test.html">
   <link rel="alternate" type="application/rss+xml" title="My Blog" href="/feed.xml">
   
   
@@ -37,7 +37,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/projects/">Projects</a>
+          <a class="page-link" href="/drumsense/">DrumSense</a>
           
         
           
@@ -62,19 +62,32 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">Projects</h1>
+    <h1 class="post-title" itemprop="name headline">Testing the preamp</h1>
+    <p class="post-meta"><time datetime="2017-02-15T08:52:24+01:00" itemprop="datePublished">Feb 15, 2017</time></p>
   </header>
 
-  <div class="post-content">
-    <p>This page will contain all my projects</p>
+  <div class="post-content" itemprop="articleBody">
+    <p>Before I ordered the circuit boards I wanted to test the preamp circuit.
+So I hooked it up on a breadboard and because I don’t have a oscilloscope I used 
+my soundcard and a software called <a href="https://www.zeitnitz.eu/scope_en">“Soundcard Scope”</a>.</p>
 
-<p><a href="http://localhost:4000/projects/project.html">Project 1</a></p>
+<p>I had some problem with the power supply to the op-amp at the beginning because I
+don’t have a proper PSU. So I first used a pack of two AA batteries and used the “middlepoint” as ground which gave me ±1,5V.
+The circuit didn’t amplified the signal at all at this point so I got a bit worried.</p>
+
+<p>But then I remembered that I have a “TI-82 stat” calculator which has a pack of 4 AAA batteries so I tried to use that instead.
+And with the ±3V the signal got amplified to the point where I was happy.</p>
+
+<p>So the circuit board is now ordered and on the way!</p>
+
+<p><img src="http://localhost:4000/assets/DrumSense/PreampTest.jpg" alt="Preamp test" /></p>
 
   </div>
 
+  
 </article>
 
       </div>
