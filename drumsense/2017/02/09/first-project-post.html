@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>My Project Blog</title>
-  <meta name="description" content="This is my project blog and portfolio.">
+  <title>The blog starting</title>
+  <meta name="description" content="About this blog">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/drumsense/2017/02/09/first-project-post.html">
   <link rel="alternate" type="application/rss+xml" title="My Project Blog" href="/feed.xml">
   
   
@@ -62,36 +62,48 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">The blog starting</h1>
+    <p class="post-meta"><time datetime="2017-02-09T10:23:24+01:00" itemprop="datePublished">Feb 9, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="about-this-blog">About this blog</h1>
+
+<p>So I’ve decided to start blogging my projects that I’m doing.</p>
+
+<p>Mostly for myself so I can use this as a sort of portfolio and a way to go back
+and check how I solved some things, if I would encounter the same problem in the future.
+And if someone could use this to help their project that’s just a bonus.</p>
+
+<p>Well enough about this and more about the actual project.</p>
+
+<h1 id="the-project">The Project</h1>
+
+<p>So I’m going to make a drum triggered LED circuit that will be connected to the 
+microphone on the drum and light a LED-strip when the drum is hit.</p>
+
+<p>I’ve also plans to make the LEDs controllable by an DMX512 controller, so it can be controlled by a light mixer. 
+Maybe it could act as a controller itself and remotely control other lights as well.</p>
+
+<p>Anyway the plan from the start is to use separate units for every drum trigger 
+equipped with a Atmega328P as controller. Those units could then either operate 
+individually or be connected to one master unit that could make decisions about 
+color, DMX commands and stuff like that. The way (at the moment) they would 
+communicate is via UART and with a multiplexer on the master unit it is able to 
+talk to all the devices with just one UART port. It would maybe be better to have this 
+communication through a bus instead.</p>
+
+<p>The power to all trigger devices should be coming from the master unit together with the communication.</p>
+
+<p>You can find the schematics and code in it’s current state at my <a href="https://github.com/Xartos/DrumSense">github</a>.</p>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Feb 15, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/drumsense/2017/02/15/preamp-test.html">Testing the preamp</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 9, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/drumsense/2017/02/09/first-project-post.html">The blog starting</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>

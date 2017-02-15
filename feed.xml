@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-15T09:31:49+01:00</updated><id>http://localhost:4000//</id><title type="html">My Blog</title><subtitle>This is my blog and portfolio
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-15T11:51:23+01:00</updated><id>http://localhost:4000//</id><title type="html">My Project Blog</title><subtitle>This is my project blog and portfolio.
 </subtitle><entry><title type="html">Testing the preamp</title><link href="http://localhost:4000/drumsense/2017/02/15/preamp-test.html" rel="alternate" type="text/html" title="Testing the preamp" /><published>2017-02-15T08:52:24+01:00</published><updated>2017-02-15T08:52:24+01:00</updated><id>http://localhost:4000/drumsense/2017/02/15/preamp-test</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/15/preamp-test.html">&lt;p&gt;Before I ordered the circuit boards I wanted to test the preamp circuit.
 So I hooked it up on a breadboard and because I don’t have a oscilloscope I used 
 my soundcard and a software called &lt;a href=&quot;https://www.zeitnitz.eu/scope_en&quot;&gt;“Soundcard Scope”&lt;/a&gt;.&lt;/p&gt;
@@ -14,4 +14,32 @@ And with the ±3V the signal got amplified to the point where I was happy.&lt;/p
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/DrumSense/PreampTest.jpg&quot; alt=&quot;Preamp test&quot; /&gt;&lt;/p&gt;</content><summary type="html">Before I ordered the circuit boards I wanted to test the preamp circuit.
 So I hooked it up on a breadboard and because I don’t have a oscilloscope I used 
-my soundcard and a software called “Soundcard Scope”.</summary></entry></feed>
+my soundcard and a software called “Soundcard Scope”.</summary></entry><entry><title type="html">The blog starting</title><link href="http://localhost:4000/drumsense/2017/02/09/first-project-post.html" rel="alternate" type="text/html" title="The blog starting" /><published>2017-02-09T10:23:24+01:00</published><updated>2017-02-09T10:23:24+01:00</updated><id>http://localhost:4000/drumsense/2017/02/09/first-project-post</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/09/first-project-post.html">&lt;h1 id=&quot;about-this-blog&quot;&gt;About this blog&lt;/h1&gt;
+
+&lt;p&gt;So I’ve decided to start blogging my projects that I’m doing.&lt;/p&gt;
+
+&lt;p&gt;Mostly for myself so I can use this as a sort of portfolio and a way to go back
+and check how I solved some things, if I would encounter the same problem in the future.
+And if someone could use this to help their project that’s just a bonus.&lt;/p&gt;
+
+&lt;p&gt;Well enough about this and more about the actual project.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-project&quot;&gt;The Project&lt;/h1&gt;
+
+&lt;p&gt;So I’m going to make a drum triggered LED circuit that will be connected to the 
+microphone on the drum and light a LED-strip when the drum is hit.&lt;/p&gt;
+
+&lt;p&gt;I’ve also plans to make the LEDs controllable by an DMX512 controller, so it can be controlled by a light mixer. 
+Maybe it could act as a controller itself and remotely control other lights as well.&lt;/p&gt;
+
+&lt;p&gt;Anyway the plan from the start is to use separate units for every drum trigger 
+equipped with a Atmega328P as controller. Those units could then either operate 
+individually or be connected to one master unit that could make decisions about 
+color, DMX commands and stuff like that. The way (at the moment) they would 
+communicate is via UART and with a multiplexer on the master unit it is able to 
+talk to all the devices with just one UART port. It would maybe be better to have this 
+communication through a bus instead.&lt;/p&gt;
+
+&lt;p&gt;The power to all trigger devices should be coming from the master unit together with the communication.&lt;/p&gt;
+
+&lt;p&gt;You can find the schematics and code in it’s current state at my &lt;a href=&quot;https://github.com/Xartos/DrumSense&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;</content><summary type="html">About this blog</summary></entry></feed>
