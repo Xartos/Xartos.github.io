@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>My Project Blog</title>
-  <meta name="description" content="This is my project blog and portfolio.">
+  <title>UART bus protocol</title>
+  <meta name="description" content="I’ve looked into the problem with the UART communication and decided to try to build a protocol on top of UART so multiple devices can be on the same bus. I ...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/drumsense/2017/02/20/uart-bus.html">
   <link rel="alternate" type="application/rss+xml" title="My Project Blog" href="/feed.xml">
   
   
@@ -62,44 +62,51 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">UART bus protocol</h1>
+    <p class="post-meta"><time datetime="2017-02-20T12:46:45+01:00" itemprop="datePublished">Feb 20, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I’ve looked into the problem with the UART communication and decided to try to
+build a protocol on top of UART so multiple devices can be on the same bus.<br />
+I found some inspiration on <a href="http://www.edaboard.com/thread302747.html">this forum</a> 
+and will try to design a protocol dealing with the issues they talk about.</p>
+
+<h1 id="protocol-first-design">Protocol first design</h1>
+
+<p><strong>Note:</strong> <em>this protocol is not design to be used for general applications but 
+specifically for this project and may include hard coded things.<br />
+Although I will try to make it as modular as my knowledge (and time) allows.</em></p>
+
+<p><img src="/assets/DrumSense/UARTProtDiag.png" alt="Image UART message" /></p>
+
+<p>The protocol I’ve started to implement will use 16-bit messages where the first 
+4 bits will be the address for the device the message is for. The next 4 bits will
+be what type of message it is and the remaining byte will be the payload.</p>
+
+<p><img src="/assets/DrumSense/UARTMess.png" alt="Image UART message" /></p>
+
+<p>The master unit will poll the slaves continuous to see if they have some information for the 
+master and when the master have some thing to send to the slaves it will send it directly.</p>
+
+<p>For the master to talk to a slave it needs to initiate the communication with a 
+special message type. Then all the other slaves will only listen to a stop command on the broadcast address.
+When the slave gets the start message it must respond with an ACK or NACK to confirm 
+or reject the communication within a period of time (not decided but 1 sec maybe).</p>
+
+<p>When the communication is over the master needs to broadcast a stop command to 
+make the other slaves listen to other commands again.</p>
+
+<p>I think I’ll leave it like this for now and come back more on this when I got a 
+chance to test it in reality.</p>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Feb 20, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/drumsense/2017/02/20/uart-bus.html">UART bus protocol</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 15, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/drumsense/2017/02/15/preamp-test.html">Testing the preamp</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 9, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/drumsense/2017/02/09/first-project-post.html">The blog starting</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>

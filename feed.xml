@@ -1,5 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-15T11:51:23+01:00</updated><id>http://localhost:4000//</id><title type="html">My Project Blog</title><subtitle>This is my project blog and portfolio.
-</subtitle><entry><title type="html">Testing the preamp</title><link href="http://localhost:4000/drumsense/2017/02/15/preamp-test.html" rel="alternate" type="text/html" title="Testing the preamp" /><published>2017-02-15T08:52:24+01:00</published><updated>2017-02-15T08:52:24+01:00</updated><id>http://localhost:4000/drumsense/2017/02/15/preamp-test</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/15/preamp-test.html">&lt;p&gt;Before I ordered the circuit boards I wanted to test the preamp circuit.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-20T13:53:14+01:00</updated><id>http://localhost:4000//</id><title type="html">My Project Blog</title><subtitle>This is my project blog and portfolio.
+</subtitle><entry><title type="html">UART bus protocol</title><link href="http://localhost:4000/drumsense/2017/02/20/uart-bus.html" rel="alternate" type="text/html" title="UART bus protocol" /><published>2017-02-20T12:46:45+01:00</published><updated>2017-02-20T12:46:45+01:00</updated><id>http://localhost:4000/drumsense/2017/02/20/uart-bus</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/20/uart-bus.html">&lt;p&gt;I’ve looked into the problem with the UART communication and decided to try to
+build a protocol on top of UART so multiple devices can be on the same bus.&lt;br /&gt;
+I found some inspiration on &lt;a href=&quot;http://www.edaboard.com/thread302747.html&quot;&gt;this forum&lt;/a&gt; 
+and will try to design a protocol dealing with the issues they talk about.&lt;/p&gt;
+
+&lt;h1 id=&quot;protocol-first-design&quot;&gt;Protocol first design&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;this protocol is not design to be used for general applications but 
+specifically for this project and may include hard coded things.&lt;br /&gt;
+Although I will try to make it as modular as my knowledge (and time) allows.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/DrumSense/UARTProtDiag.png&quot; alt=&quot;Image UART message&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The protocol I’ve started to implement will use 16-bit messages where the first 
+4 bits will be the address for the device the message is for. The next 4 bits will
+be what type of message it is and the remaining byte will be the payload.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/DrumSense/UARTMess.png&quot; alt=&quot;Image UART message&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The master unit will poll the slaves continuous to see if they have some information for the 
+master and when the master have some thing to send to the slaves it will send it directly.&lt;/p&gt;
+
+&lt;p&gt;For the master to talk to a slave it needs to initiate the communication with a 
+special message type. Then all the other slaves will only listen to a stop command on the broadcast address.
+When the slave gets the start message it must respond with an ACK or NACK to confirm 
+or reject the communication within a period of time (not decided but 1 sec maybe).&lt;/p&gt;
+
+&lt;p&gt;When the communication is over the master needs to broadcast a stop command to 
+make the other slaves listen to other commands again.&lt;/p&gt;
+
+&lt;p&gt;I think I’ll leave it like this for now and come back more on this when I got a 
+chance to test it in reality.&lt;/p&gt;</content><summary type="html">I’ve looked into the problem with the UART communication and decided to try to
+build a protocol on top of UART so multiple devices can be on the same bus.
+I found some inspiration on this forum 
+and will try to design a protocol dealing with the issues they talk about.</summary></entry><entry><title type="html">Testing the preamp</title><link href="http://localhost:4000/drumsense/2017/02/15/preamp-test.html" rel="alternate" type="text/html" title="Testing the preamp" /><published>2017-02-15T08:52:24+01:00</published><updated>2017-02-15T08:52:24+01:00</updated><id>http://localhost:4000/drumsense/2017/02/15/preamp-test</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/15/preamp-test.html">&lt;p&gt;Before I ordered the circuit boards I wanted to test the preamp circuit.
 So I hooked it up on a breadboard and because I don’t have a oscilloscope I used 
 my soundcard and a software called &lt;a href=&quot;https://www.zeitnitz.eu/scope_en&quot;&gt;“Soundcard Scope”&lt;/a&gt;.&lt;/p&gt;
 
@@ -12,7 +46,7 @@ And with the ±3V the signal got amplified to the point where I was happy.&lt;/p
 
 &lt;p&gt;So the circuit board is now ordered and on the way!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/DrumSense/PreampTest.jpg&quot; alt=&quot;Preamp test&quot; /&gt;&lt;/p&gt;</content><summary type="html">Before I ordered the circuit boards I wanted to test the preamp circuit.
+&lt;p&gt;&lt;img src=&quot;/assets/DrumSense/PreampTest.jpg&quot; alt=&quot;Preamp test&quot; /&gt;&lt;/p&gt;</content><summary type="html">Before I ordered the circuit boards I wanted to test the preamp circuit.
 So I hooked it up on a breadboard and because I don’t have a oscilloscope I used 
 my soundcard and a software called “Soundcard Scope”.</summary></entry><entry><title type="html">The blog starting</title><link href="http://localhost:4000/drumsense/2017/02/09/first-project-post.html" rel="alternate" type="text/html" title="The blog starting" /><published>2017-02-09T10:23:24+01:00</published><updated>2017-02-09T10:23:24+01:00</updated><id>http://localhost:4000/drumsense/2017/02/09/first-project-post</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/09/first-project-post.html">&lt;h1 id=&quot;about-this-blog&quot;&gt;About this blog&lt;/h1&gt;
 
