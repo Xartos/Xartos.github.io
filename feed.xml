@@ -1,5 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-20T14:13:48+01:00</updated><id>http://localhost:4000//</id><title type="html">My Project Blog</title><subtitle>This is my project blog and portfolio.
-</subtitle><entry><title type="html">UART bus protocol</title><link href="http://localhost:4000/drumsense/2017/02/20/uart-bus.html" rel="alternate" type="text/html" title="UART bus protocol" /><published>2017-02-20T12:46:45+01:00</published><updated>2017-02-20T12:46:45+01:00</updated><id>http://localhost:4000/drumsense/2017/02/20/uart-bus</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/20/uart-bus.html">&lt;p&gt;I’ve looked into the problem with the UART communication and decided to try to
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-17T10:48:23+01:00</updated><id>http://localhost:4000//</id><title type="html">My Project Blog</title><subtitle>This is my project blog and portfolio.
+</subtitle><entry><title type="html">Got the PCBs</title><link href="http://localhost:4000/drumsense/2017/03/17/got-the-pcbs.html" rel="alternate" type="text/html" title="Got the PCBs" /><published>2017-03-17T10:25:12+01:00</published><updated>2017-03-17T10:25:12+01:00</updated><id>http://localhost:4000/drumsense/2017/03/17/got-the-pcbs</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/03/17/got-the-pcbs.html">&lt;p&gt;I just got the PCB’s that I ordered and I’m very pleased with the result.
+I never thought that getting your own PCB’s was this cheap and easy. Good job China!&lt;/p&gt;
+
+&lt;p&gt;Although now when I got them I realized that I’ve made a quite big mistake…&lt;br /&gt;
+When I was testing the part of the circuit that controls the LED-strip (the transistors) 
+I had only a 24V power supply with no tap and it worked fine. Then because I 
+needed +/- voltage for the op-amp I designed this circuit to use +/- 12V. 
+This caused me a quite serious problem…&lt;br /&gt;
+The MCU is supplied with 5V and this doesn’t make the transistors close properly.&lt;br /&gt;
+I don’t really know how to solve this problem yet, but I’m gonna order a +/- 12V
+transformer so I can run some tests on a breadboard and maybe come up with some 
+solution (maybe switching to optocouplers could solve it).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/DrumSense/PCBempty.jpg&quot; alt=&quot;Image The PCBs&quot; /&gt;&lt;/p&gt;</content><summary type="html">I just got the PCB’s that I ordered and I’m very pleased with the result.
+I never thought that getting your own PCB’s was this cheap and easy. Good job China!</summary></entry><entry><title type="html">UART bus protocol</title><link href="http://localhost:4000/drumsense/2017/02/20/uart-bus.html" rel="alternate" type="text/html" title="UART bus protocol" /><published>2017-02-20T12:46:45+01:00</published><updated>2017-02-20T12:46:45+01:00</updated><id>http://localhost:4000/drumsense/2017/02/20/uart-bus</id><content type="html" xml:base="http://localhost:4000/drumsense/2017/02/20/uart-bus.html">&lt;p&gt;I’ve looked into the problem with the UART communication and decided to try to
 build a protocol on top of UART so multiple devices can be on the same bus.&lt;br /&gt;
 I found some inspiration on &lt;a href=&quot;http://www.edaboard.com/thread302747.html&quot;&gt;this forum&lt;/a&gt; 
 and will try to design a protocol dealing with the issues they talk about.&lt;/p&gt;
